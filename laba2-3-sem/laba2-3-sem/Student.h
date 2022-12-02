@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include "Human.h"
 
+
 using namespace std;
 
 class Student : public Human
@@ -28,8 +29,8 @@ public:
 	Student(int scholarship);
 	Student(class Human human, int scholarship, string group);
 	~Student();
-	friend void operator<<(ostream&, Student stud);
-
+	friend void operator<<(ostream&, Student st);
+	void addRating(int rt);
 	int getAge() override;
 
 	void FileRead(Student* stud);

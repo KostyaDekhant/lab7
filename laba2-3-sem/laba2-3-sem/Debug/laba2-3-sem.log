@@ -1,2 +1,3 @@
-﻿  laba2-3-sem.cpp
+﻿  Student.cpp
+C:\Users\Podor\Documents\GitHub\lab7\laba2-3-sem\laba2-3-sem\Student.cpp(83,21): warning C4101: rt: неиспользованная локальная переменная
   laba2-3-sem.vcxproj -> C:\Users\Podor\Documents\GitHub\lab7\laba2-3-sem\Debug\laba2-3-sem.exe

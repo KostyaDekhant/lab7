@@ -26,8 +26,8 @@ int main()
 	stud->FileRead(stud);
 	Human hum;
 	stud[1] = hum;
-	cout << stud[0];
-	_getch();
+	/*cout << stud[0];
+	_getch();*/
 	prof->SetCount(0);
 	&stud[0].operator++();
 	do {

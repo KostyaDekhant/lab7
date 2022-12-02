@@ -1,6 +1,8 @@
 #pragma once
 #include "FIO.h"
 #include "pd.h"
+#include <vector>
+#include <algorithm>
 //#include "Student.h"
 //#include "Professor.h"
 
@@ -11,6 +13,7 @@ private:
 	class passport_data pd;
 	int age;
 public:
+	vector<int> rating;
 	class FIO getFIO();
 	class passport_data getPD();
 	virtual int getAge();
