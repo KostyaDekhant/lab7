@@ -45,11 +45,17 @@ Student::~Student()
 
 }
 
-void Student::addRating(int rt)
-{
-	this->rating.push_back(rt);
-}
 
+void Student::Display()
+{
+	cout << "---------------------------------" << endl;
+	cout << "ФИО: " + this->getFIO().getLast() + " " + this->getFIO().getFirst() + " " + this->getFIO().getMid() << endl;
+	cout << "Паспортные данные: " + this->getPD().getNum() + " " + this->getPD().getSer() << endl;
+	cout << "Возраст: " + to_string(this->getAge()) << endl;
+	cout << "Студент группы: " + this->group << endl;
+	cout << "Стипендия: " + to_string(this->scholarship) << endl;
+	cout << "---------------------------------\n\n" << endl;
+}
 
 void operator<<(ostream&, Student st)
 {
@@ -86,7 +92,7 @@ void Student::FileRead(Student* stud)
 			file >> num >> ser;
 			file >> sholar;
 			file >> group;
-			if (group[group.length() - 1] == '*')
+			/*if (group[group.length() - 1] == '*')
 			{
 				stud[i].rating.reserve(100);
 				group = group.substr(0, group.length() - 1);
@@ -98,7 +104,7 @@ void Student::FileRead(Student* stud)
 					file >> num_of_rt;
 					stud[i].rating.push_back(num_of_rt);
 				}
-			}
+			}*/
 			stud[i].setFIO(first, mid, last);
 			stud[i].setAge(age);
 			stud[i].setPD(num, ser);
@@ -130,7 +136,7 @@ void Student::FileWrite(Student *stud)
 			file << stud[i].getPD().getNum() << endl;
 			file << stud[i].getPD().getSer() << endl;
 			file << stud[i].scholarship << endl;
-			int count_rating = stud[i].rating.size();
+			/*int count_rating = stud[i].rating.size();
 			if (count_rating > 0)
 			{
 				file << stud[i].group + "*" << endl;
@@ -140,7 +146,7 @@ void Student::FileWrite(Student *stud)
 					file << stud[i].rating[j] << endl;
 				}
 			}
-			else
+			else*/
 				file << stud[i].group << endl;
 		}
 		file.close();
@@ -201,12 +207,12 @@ void InputStud(Student& stud)
 	cin >> stud.group;
 	cout << "Введите кол-во оценок: ";
 	int num_of_ratings = write_num(100);
-	for (int i = 0; i < num_of_ratings; i++)
+	/*for (int i = 0; i < num_of_ratings; i++)
 	{
 		cout << to_string(i+1) + ": ";
 		stud.addRating(write_num(100));
 	}
-	sort(stud.rating.begin(), stud.rating.end());
+	sort(stud.rating.begin(), stud.rating.end());*/
 	stud.count_stud++;
 }
 void Student::OutputStud(int i)
@@ -218,7 +224,7 @@ void Student::OutputStud(int i)
 	cout << "Возраст: " + to_string(this->getAge()) << endl;
 	cout << "Студент группы: " + this->group << endl;
 	cout << "Стипендия: " + to_string(this->scholarship) << endl;
-	int size_of_rt = this->rating.size();
+	/*int size_of_rt = this->rating.size();
 	if (size_of_rt > 0)
 	{
 		cout << "Оценки:";
@@ -244,7 +250,7 @@ void Student::OutputStud(int i)
 		{
 			cout << "Нет" << endl;
 		}
-	}
+	}*/
 	cout << "\n---------------------------------\n\n" << endl;
 }
 

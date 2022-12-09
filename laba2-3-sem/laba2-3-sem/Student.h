@@ -30,8 +30,9 @@ public:
 	Student(class Human human, int scholarship, string group);
 	~Student();
 	friend void operator<<(ostream&, Student st);
-	void addRating(int rt);
 	int getAge() override;
+
+	void Display();
 
 	void FileRead(Student* stud);
 	void FileWrite(Student* stud);

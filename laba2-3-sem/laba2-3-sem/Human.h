@@ -13,10 +13,10 @@ private:
 	class passport_data pd;
 	int age;
 public:
-	vector<int> rating;
 	class FIO getFIO();
 	class passport_data getPD();
 	virtual int getAge();
+	virtual void Display();
 
 	void setFIO(string first, string mid, string last);
 	void setPD(string num, string ser);

@@ -12,6 +12,7 @@
 #include "Function.h"
 #include <fstream>
 #include <algorithm>
+#include "laba2-3-sem.h"
 
 int main()
 {
@@ -20,16 +21,56 @@ int main()
 	SetConsoleOutputCP(1251);
 	bool exit = false;
 	int inp;
-	Student *stud = new class Student[MAX_SIZE];
+	Student* stud = new class Student[MAX_SIZE];
 	Professor* prof = new class Professor[MAX_SIZE];
 	stud->SetCount(1);
-	stud->FileRead(stud);
-	Human hum;
-	stud[1] = hum;
-	/*cout << stud[0];
-	_getch();*/
 	prof->SetCount(0);
-	&stud[0].operator++();
+
+
+	Student *studs = new class Student[2];
+	Human *hum = new class  Human[2];
+	vector<Human*> ages;
+	ages.push_back(&studs[0]);
+	ages.push_back(&hum[0]);
+	ages.push_back(&studs[1]);
+	studs[1].setAge(22);
+	ages.push_back(&hum[1]);
+	hum[1].setAge(21);
+	/*vector<Human*>::iterator  ir;
+	for (ir = ages.begin(); ir != ages.end(); ++ir)
+	{
+		if (dynamic_cast<Student*>(*ir))
+			(*ir)->Display();
+	}*/
+	for(int i = 0; i < ages.size(); ++i)
+	{
+		if (dynamic_cast<Student*>(ages[i]))
+			ages[i]->Display();
+	}
+	_getch();
+	system("cls");
+	sort(ages.begin(), ages.end(), [](Human* hum, Human* hum1)
+		{
+			return  hum[0].getAge() < hum1[0].getAge();
+		});
+	for (int i = 0; i < ages.size(); ++i)
+	{
+		ages[i]->Display();
+	}
+	_getch();
+	system("cls");
+	auto res = find_if(ages.begin(), ages.end(), [](Human* hum) {
+		return hum[0].getAge() >= 18;
+		});
+	if (res != ages.end())
+	{
+		cout << "Да, есть человек, чей возраст >= " + to_string(18) << endl;
+	}
+	else
+	{
+		cout << "Нет человека, чей возраст >= " + to_string(18) << endl;
+	}
+	_getch();
 	do {
 		print_choise();
 		inp = write_num(9);
@@ -39,6 +80,6 @@ int main()
 			act_choise(inp, stud, prof);
 
 	} while (!exit);
-	stud->FileWrite(stud);
 	delete[] stud, prof;
+	delete studs;
 }

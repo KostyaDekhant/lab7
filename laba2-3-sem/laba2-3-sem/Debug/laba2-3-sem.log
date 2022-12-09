@@ -1,3 +1,4 @@
-﻿  Student.cpp
-C:\Users\Podor\Documents\GitHub\lab7\laba2-3-sem\laba2-3-sem\Student.cpp(83,21): warning C4101: rt: неиспользованная локальная переменная
+﻿  laba2-3-sem.cpp
+C:\Users\Podor\Documents\GitHub\lab7\laba2-3-sem\laba2-3-sem\laba2-3-sem.cpp(45,19): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Podor\Documents\GitHub\lab7\laba2-3-sem\laba2-3-sem\laba2-3-sem.cpp(56,20): warning C4018: <: несоответствие типов со знаком и без знака
   laba2-3-sem.vcxproj -> C:\Users\Podor\Documents\GitHub\lab7\laba2-3-sem\Debug\laba2-3-sem.exe

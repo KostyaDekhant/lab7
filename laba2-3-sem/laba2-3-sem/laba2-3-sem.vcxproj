@@ -151,6 +151,7 @@
     <ClInclude Include="FIO.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Human.h" />
+    <ClInclude Include="laba2-3-sem.h" />
     <ClInclude Include="pd.h" />
     <ClInclude Include="Professor.h" />
     <ClInclude Include="Student.h" />

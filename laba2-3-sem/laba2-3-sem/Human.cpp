@@ -49,6 +49,16 @@ int Human::getAge()
 	return age;
 }
 
+void Human::Display()
+{
+	cout << "---------------------------------" << endl;
+	cout << "ФИО: " + this->getFIO().getLast() + " " + this->getFIO().getFirst() + " " + this->getFIO().getMid() << endl;
+	cout << "Паспортные данные: " + this->getPD().getNum() + " " + this->getPD().getSer() << endl;
+	cout << "Возраст: " + to_string(this->getAge()) << endl;
+	cout << "---------------------------------\n\n" << endl;
+}
+
+
 void Human::setFIO(string first, string mid, string last)
 {
 	fio.setFirst(first);
